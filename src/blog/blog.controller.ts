@@ -11,7 +11,7 @@ export class BlogController {
     return this.blogService.getAllBlog();
   }
   @Post('/createblog')
-  createBlog(@Body() blog: BlogType): BlogType {
-    return this.blogService.addBlog(blog);
+  createBlog(@Body() blog: BlogType): Promise<BlogType> {
+    return this.blogService.create(blog);
   }
 }
